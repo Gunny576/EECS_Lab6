@@ -1,0 +1,6 @@
+C = [[0 for x in range (cols)]for x in range (rows)]
+len(a)
+len(A[0])
+print(str(int))
+print(str1 + str2)
+for line in file 
