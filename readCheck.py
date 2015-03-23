@@ -18,6 +18,7 @@ def fileReader(filename):
         line = [int(x) for x in line.split(',')]
         matrix1.append(line)
         array = np.asarray(matrix1)
+    print(array)
     return array
 
 
@@ -39,5 +40,12 @@ def matrixValidator(matrix):
 array1 = fileReader(file1)
 array2 = fileReader(file2)
 
-print(array1)
-print(array2)
+
+def transpose(matrix):
+    TransposeMatrix = [ [ 0 for a in range(len(matrix[0]))]for b in range (len(matrix))]
+    for i in range (len(matrix)):
+        for j in range (len(matrix[0])):
+            TransposeMatrix[j][i] = matrix[i][j]
+    print(TransposeMatrix)    
+    return TransposeMatrix
+
