@@ -4,53 +4,40 @@
 import csv
 import numpy as np
 
+file1 = 'input1.csv'
+file2 = 'input2.csv'
 
-file1 = open('input1.csv', 'r')  # reads in the first file
-file2 = open('input2.csv', 'r')  # reads in the second file
+def fileReader(filename):
+    file1Open = open(filename, 'r')
+    
+    reader1 = csv.reader(file1Open)
 
-reader1 = csv.reader(file1)
-reader2 = csv.reader(file2)
+    matrix1 = []
 
-matrix1 = []
-matrix2 = []
-
-for line in file1:
-    line = [int(x) for x in line.split(',')]
-    matrix1.append(line)
-
-for line in file2:
-    line = [int(x) for x in line.split(',')]
-    matrix2.append(line)
+    for line in file1Open:
+        line = [int(x) for x in line.split(',')]
+        matrix1.append(line)
+        array = np.asarray(matrix1)
+    return array
 
 
-x = matrix1[1][0]+matrix1[1][0]
+def matrixValidator(matrix):
+    validFlag = True
+    for row in matrix:
+        for row1 in matrix:
+            if len(row) != len(row1):
+               validFlag1 = False
+    
+    if(validFlag == True):
+        print("Matrix is valid.")
+    if(validFlag == False):
+        print("Matrix is invalid")
 
-print(x)
-print(matrix1)
-print(matrix2)
+    return validFlag
 
 
-validFlag1 = 1
-validFlag2 = 1
-
-for row in matrix1:
-    for row1 in matrix1:
-        if len(row) != len(row1):
-            validFlag1 = 0
-
-for row in matrix2:
-    for row1 in matrix2:
-        if len(row) != len(row1):
-            validFlag2 = 0
-
-if validFlag1 == 0:
-    print("Input from Input1.csv is not a valid Matrix")
-
-if validFlag2 == 0:
-    print("Input from Input2.csv is not a valid Matrix")
-
-array1 = np.asarray(matrix1)
-array2 = np.asarray(matrix2)
+array1 = fileReader(file1)
+array2 = fileReader(file2)
 
 print(array1)
 print(array2)
