@@ -6,7 +6,7 @@ def add_Mat(mat_a,mat_b) :
 	d = len(mat_b[0])
 	if a == c and b == d:
 		
-		mat_Result = [ [ 0 for r in range(b) ] for s in range(a) ]
+		mat_Result = [ [ 0 for r in range(c) ] for s in range(a) ]
 				
 				
 		for i in range (a):
@@ -31,7 +31,7 @@ def sub_Mat(mat_a,mat_b) :
 	
 	if a == c and b == d:
 
-		mat_Result = [ [ 0 for r in range(b) ] for s in range(a) ]
+		mat_Result = [ [ 0 for r in range(c) ] for s in range(a) ]
 
 
 		for i in range (a):
