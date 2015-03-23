@@ -8,7 +8,7 @@ file1 = 'input1.csv'
 file2 = 'input2.csv'
 
 def fileReader(filename):
-    file1Open = open(file1, 'r')
+    file1Open = open(filename, 'r')
     
     reader1 = csv.reader(file1Open)
 
@@ -20,7 +20,6 @@ def fileReader(filename):
         array = np.asarray(matrix1)
     return array
 
-print fileReader(file1)
 
 def matrixValidator(matrix):
     validFlag = True
@@ -36,8 +35,9 @@ def matrixValidator(matrix):
 
     return validFlag
 
-if(matrixValidator(fileReader(file1)) == True):
-    x = 1
 
+array1 = fileReader(file1)
+array2 = fileReader(file2)
 
-
+print(array1)
+print(array2)
